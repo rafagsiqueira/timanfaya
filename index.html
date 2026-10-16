@@ -1,0 +1,356 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Estúdio à venda no Timanfaya · Jurerê, Florianópolis</title>
+<meta name="description" content="Estúdio de 32,10 m² com vista para o mar no Residencial Timanfaya, em Canajurê (Jurerê), Florianópolis. Pronto para morar, com vaga e hobby box. R$ 750.000. Venda direta com o proprietário.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:title" content="Estúdio com vista para o mar · Timanfaya, Jurerê">
+<meta property="og:description" content="32,10 m², vaga + hobby box, a poucos passos da praia de Canajurê. R$ 750.000.">
+<meta property="og:image" content="img/og.jpg">
+<meta name="theme-color" content="#10292f">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --sand:#f7f1e8; --sand-2:#efe5d6; --ink:#10292f; --ink-2:#3b5359;
+  --sea:#2c7b83; --sun:#d98a2f; --sun-2:#f0b45e; --line:rgba(16,41,47,.14);
+  --serif:"Cormorant Garamond",Georgia,serif; --sans:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){--sand:#0e1d21;--sand-2:#142a30;--ink:#f3ebdf;--ink-2:#b7c4c4;--line:rgba(243,235,223,.16)}
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--sand);color:var(--ink);font:400 17px/1.65 var(--sans);-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}
+a{color:inherit}
+.wrap{width:min(1120px,100% - 32px);margin-inline:auto}
+section{padding:clamp(56px,9vw,112px) 0}
+h1,h2,h3{font-family:var(--serif);font-weight:600;line-height:1.14;margin:0}
+h2{font-size:clamp(34px,5vw,56px);letter-spacing:-.01em}
+.eyebrow{font:600 12px/1 var(--sans);letter-spacing:.2em;text-transform:uppercase;color:var(--sun);margin:0 0 16px}
+.lead{font-size:clamp(18px,2vw,21px);color:var(--ink-2);max-width:62ch}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:15px 26px;border-radius:999px;background:var(--sun);color:#1b1206;font-weight:600;text-decoration:none;transition:transform .2s,background .2s}
+.btn:hover{background:var(--sun-2);transform:translateY(-2px)}
+.btn.ghost{background:transparent;color:#fff;border:1px solid rgba(255,255,255,.55)}
+.btn.ghost:hover{background:rgba(255,255,255,.14)}
+
+/* topbar */
+.top{position:fixed;inset:0 0 auto 0;z-index:20;transition:background .3s,backdrop-filter .3s}
+.top.solid{background:rgba(16,41,47,.88);backdrop-filter:blur(10px)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
+.brand{font:600 22px var(--serif);color:#fff;text-decoration:none;letter-spacing:.02em}
+.top nav{display:flex;gap:26px}
+.top nav a{color:#fff;text-decoration:none;font-size:14px;opacity:.9}
+.top nav a:hover{opacity:1;text-decoration:underline;text-underline-offset:6px}
+@media(max-width:720px){.top nav a:not(.cta){display:none}}
+.top .cta{background:var(--sun);color:#1b1206;padding:8px 16px;border-radius:999px;font-weight:600;opacity:1}
+
+/* hero */
+.hero{position:relative;min-height:100svh;display:flex;align-items:flex-end;color:#fff;padding:0;overflow:hidden;background:#10292f}
+.hero img.bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,25,29,.5) 0%,rgba(10,25,29,.12) 30%,rgba(10,25,29,.55) 62%,rgba(10,25,29,.88) 100%)}
+.hero .wrap{position:relative;z-index:2;padding:0 0 clamp(36px,7vw,80px)}
+.hero h1{font-size:clamp(44px,8vw,104px);max-width:14ch;text-shadow:0 2px 30px rgba(0,0,0,.35)}
+.hero h1 em{color:var(--sun-2);font-style:italic;font-weight:500}
+.hero h1 em{text-shadow:0 2px 24px rgba(10,25,29,.6)}
+.hero p.sub{font-size:clamp(17px,2vw,22px);max-width:46ch;margin:20px 0 30px;opacity:.95}
+.hero .actions{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+.price-tag{margin-left:auto;text-align:right}
+.price-tag small{display:block;font-size:12px;letter-spacing:.18em;text-transform:uppercase;opacity:.85}
+.price-tag b{font:600 clamp(34px,5vw,56px)/1 var(--serif)}
+@media(max-width:720px){.price-tag{margin:18px 0 0;text-align:left;width:100%}}
+
+/* facts */
+.facts{padding:0;margin-top:-1px;background:var(--ink);color:#f3ebdf}
+.facts .wrap{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:0}
+.fact{padding:28px 18px;border-left:1px solid rgba(255,255,255,.12)}
+.fact:first-child{border-left:0}
+@media(max-width:720px){.wrap.fx{grid-template-columns:1fr 1fr}.fact:nth-child(odd){border-left:0}.fact{border-top:1px solid rgba(255,255,255,.12)}.fact:nth-child(-n+2){border-top:0}}
+.fact b{display:block;font:600 36px/1.1 var(--serif);color:var(--sun-2)}
+.fact span{font-size:14px;opacity:.85}
+
+/* intro split */
+.split{display:grid;gap:clamp(28px,5vw,72px);grid-template-columns:1fr 1fr;align-items:center}
+@media(max-width:860px){.split{grid-template-columns:1fr}}
+.split img{width:100%;border-radius:18px;aspect-ratio:4/5;object-fit:cover;box-shadow:0 30px 60px -30px rgba(0,0,0,.45)}
+.checks{list-style:none;padding:0;margin:28px 0 0;display:grid;gap:12px}
+.checks li{display:flex;gap:12px;align-items:flex-start}
+.checks li::before{content:"";flex:none;width:9px;height:9px;margin-top:11px;border-radius:50%;background:var(--sun)}
+
+/* gallery */
+.gal-head{display:flex;flex-wrap:wrap;gap:20px;align-items:end;justify-content:space-between;margin-bottom:32px}
+.tabs{display:inline-flex;background:var(--sand-2);border-radius:999px;padding:4px;border:1px solid var(--line)}
+.tabs button{border:0;background:transparent;color:var(--ink);padding:10px 20px;border-radius:999px;font:500 14px var(--sans);cursor:pointer}
+.tabs button[aria-selected="true"]{background:var(--ink);color:var(--sand)}
+.panel[hidden]{display:none}
+.grid{display:grid;gap:14px;grid-template-columns:repeat(12,1fr)}
+.grid figure{position:relative;margin:0;overflow:hidden;border-radius:14px;background:var(--sand-2);cursor:zoom-in}
+.grid img{width:100%;height:100%;object-fit:cover;transition:transform .6s}
+.grid figure:hover img{transform:scale(1.04)}
+.grid figcaption{position:absolute;left:10px;bottom:10px;right:10px;font-size:12.5px;line-height:1.35;color:#fff;background:rgba(10,25,29,.66);backdrop-filter:blur(4px);padding:6px 10px;border-radius:8px;width:fit-content;max-width:calc(100% - 20px)}
+.badge{position:absolute;top:10px;left:10px;font:600 11px/1 var(--sans);letter-spacing:.08em;text-transform:uppercase;background:var(--sun);color:#1b1206;padding:6px 10px;border-radius:999px}
+.badge.real{background:#fff}
+.g6{grid-column:span 6}.g4{grid-column:span 4}.g8{grid-column:span 8}.g3{grid-column:span 3}.g12{grid-column:span 12}
+.h-tall{aspect-ratio:3/4}.h-wide{aspect-ratio:16/10}.h-sq{aspect-ratio:1}
+@media(max-width:760px){.g6,.g4,.g8,.g3{grid-column:span 12}.h-tall{aspect-ratio:4/5}}
+.note{margin-top:18px;font-size:14px;color:var(--ink-2);max-width:78ch}
+
+/* alt section */
+.alt{background:var(--sand-2)}
+.amen{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:12px;margin-top:36px}
+.amen div{padding:16px 18px;border:1px solid var(--line);border-radius:14px;background:var(--sand);font-weight:500}
+.amen div span{display:block;font-size:13px;font-weight:400;color:var(--ink-2)}
+
+/* location */
+.loc{position:relative;color:#fff;background:#10292f;overflow:hidden}
+.loc img.bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.55}
+.loc .wrap{position:relative}
+.loc .lead{color:#e9e1d3}
+.pills{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
+.pills span{border:1px solid rgba(255,255,255,.4);border-radius:999px;padding:8px 16px;font-size:14px;background:rgba(10,25,29,.35)}
+.mapbtn{margin-top:28px}
+
+/* contact */
+.contact{background:var(--ink);color:#f3ebdf;text-align:center}
+.contact h2{color:#fff}
+.contact .lead{margin:18px auto 34px;color:#c9d4d3}
+.contact .btn{font-size:18px;padding:18px 34px}
+.contact .num{margin-top:18px;font-size:15px;opacity:.8}
+footer{padding:36px 0;font-size:13px;color:var(--ink-2)}
+footer p{max-width:90ch;margin:0 0 10px}
+
+/* lightbox */
+.lb{position:fixed;inset:0;background:rgba(5,12,14,.94);z-index:50;display:none;align-items:center;justify-content:center;flex-direction:column;padding:20px}
+.lb.open{display:flex}
+.lb img{max-height:82vh;max-width:96vw;object-fit:contain;border-radius:8px}
+.lb p{color:#e8e1d4;margin:14px 0 0;font-size:14px;text-align:center;max-width:70ch}
+.lb button{position:absolute;background:rgba(255,255,255,.12);color:#fff;border:0;width:46px;height:46px;border-radius:50%;font-size:22px;cursor:pointer}
+.lb button:hover{background:rgba(255,255,255,.25)}
+.lb .x{top:16px;right:16px}.lb .p{left:14px;top:50%}.lb .n{right:14px;top:50%}
+
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .9s,transform .9s}
+.reveal.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}.grid img{transition:none}}
+</style>
+</head>
+<body>
+
+<header class="top" id="top">
+  <div class="wrap">
+    <a class="brand" href="#inicio">Timanfaya</a>
+    <nav aria-label="Principal">
+      <a href="#apartamento">Apartamento</a>
+      <a href="#edificio">Edifício</a>
+      <a href="#localizacao">Localização</a>
+      <a class="cta" href="#contato">Falar com o proprietário</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<section class="hero" id="inicio">
+  <img class="bg" src="img/vista-poente.jpg" alt="Pôr do sol sobre a baía de Canajurê, com barcos ancorados e a Ilha do Francês ao fundo">
+  <div class="wrap">
+    <p class="eyebrow" style="color:var(--sun-2)">Canajurê · Jurerê · Florianópolis</p>
+    <h1>Seu refúgio com <em>vista para o mar</em></h1>
+    <p class="sub">Estúdio de 32,10&nbsp;m² no Residencial Timanfaya, com posição solar privilegiada, vaga de garagem e lazer completo — a poucos passos da praia.</p>
+    <div class="actions">
+      <a class="btn" href="#contato">Agendar visita</a>
+      <a class="btn ghost" href="#apartamento">Conhecer o apartamento</a>
+      <div class="price-tag"><small>Valor de venda</small><b>R$ 750.000</b></div>
+    </div>
+  </div>
+</section>
+
+<section class="facts" aria-label="Resumo">
+  <div class="wrap fx">
+    <div class="fact"><b>32,10 m²</b><span>área privativa</span></div>
+    <div class="fact"><b>Estúdio</b><span>1 dormitório integrado</span></div>
+    <div class="fact"><b>1 vaga</b><span>+ hobby box</span></div>
+    <div class="fact"><b>Vista mar</b><span>pôr do sol no horizonte</span></div>
+    <div class="fact"><b>Pronto</b><span>para morar ou investir</span></div>
+  </div>
+</section>
+
+<section id="apartamento">
+  <div class="wrap split">
+    <div class="reveal">
+      <p class="eyebrow">O apartamento</p>
+      <h2>Luz dourada, mar na janela.</h2>
+      <p class="lead" style="margin-top:22px">Um estúdio inteligente, com posição solar privilegiada e vista para o mar. Ambiente integrado, janelão e acabamento limpo: uma tela em branco para morar bem ou para investir em temporada.</p>
+      <ul class="checks">
+        <li>Área privativa de 32,10&nbsp;m², com 1 banheiro</li>
+        <li>Janela ampla voltada para o mar e para o pôr do sol</li>
+        <li>Vaga de garagem e hobby box</li>
+        <li>Condomínio com piscina, espaço gourmet e salão de festas</li>
+      </ul>
+      <p style="margin-top:32px"><a class="btn" href="#contato">Quero visitar</a></p>
+    </div>
+    <img class="reveal" src="img/hoje-sala.jpg" alt="Sala do estúdio ao entardecer, com o sol se pondo sobre o mar pela janela" loading="lazy">
+  </div>
+</section>
+
+<section class="alt" id="galeria">
+  <div class="wrap">
+    <div class="gal-head">
+      <div>
+        <p class="eyebrow">Galeria</p>
+        <h2>Como está hoje e<br>como pode ficar.</h2>
+      </div>
+      <div class="tabs" role="tablist" aria-label="Tipo de imagem">
+        <button role="tab" aria-selected="true" aria-controls="p-hoje" id="t-hoje">Fotos reais</button>
+        <button role="tab" aria-selected="false" aria-controls="p-deco" id="t-deco">Decorado (ilustração)</button>
+      </div>
+    </div>
+
+    <div class="grid panel" id="p-hoje" role="tabpanel" aria-labelledby="t-hoje">
+      <figure class="g6 h-tall"><span class="badge real">Foto real</span>
+        <img src="img/hoje-sala.jpg" alt="Sala do estúdio com o pôr do sol na janela" loading="lazy">
+        <figcaption>Sala e janela com vista para o mar, ao entardecer</figcaption></figure>
+      <figure class="g6 h-tall"><span class="badge real">Foto real</span>
+        <img src="img/hoje-cozinha.jpg" alt="Área da cozinha e entrada do estúdio, iluminadas pelo sol" loading="lazy">
+        <figcaption>Cozinha e entrada, com a luz da tarde</figcaption></figure>
+    </div>
+    <p class="note" id="n-hoje">Fotos reais do apartamento, sem decoração, tiradas ao pôr do sol.</p>
+
+    <div class="grid panel" id="p-deco" role="tabpanel" aria-labelledby="t-deco" hidden>
+      <figure class="g8 h-wide"><span class="badge">Ilustração</span>
+        <img src="img/deco-sala.jpg" alt="Ilustração de sala e cozinha decoradas em tons de madeira e bege" loading="lazy">
+        <figcaption>Sala + cozinha com bancada, sugestão de decoração</figcaption></figure>
+      <figure class="g4 h-wide"><span class="badge">Ilustração</span>
+        <img src="img/deco-banheiro.jpg" alt="Ilustração de banheiro com box de vidro e bancada branca" loading="lazy">
+        <figcaption>Banheiro, sugestão de acabamento</figcaption></figure>
+      <figure class="g12 h-wide" style="aspect-ratio:21/9"><span class="badge">Ilustração</span>
+        <img src="img/deco-quarto.jpg" alt="Ilustração do estúdio com cama, sofá e painel de TV em madeira" loading="lazy">
+        <figcaption>Ambiente de estar e dormir integrados, sugestão de layout</figcaption></figure>
+    </div>
+    <p class="note" id="n-deco" hidden><strong>Atenção:</strong> as imagens desta aba são ilustrações de <em>virtual staging</em> (decoração gerada digitalmente) e mostram apenas uma sugestão de como o espaço pode ser aproveitado. Mobiliário e acabamentos mostrados não acompanham o imóvel.</p>
+  </div>
+</section>
+
+<section id="edificio">
+  <div class="wrap">
+    <div class="split">
+      <img class="reveal" src="img/predio-entrada.jpg" alt="Entrada do Residencial Timanfaya, com painel em madeira e logotipo" loading="lazy">
+      <div class="reveal">
+        <p class="eyebrow">O edifício</p>
+        <h2>Residencial Timanfaya</h2>
+        <p class="lead" style="margin-top:22px">Em Canajurê, uma das regiões mais valorizadas de Florianópolis, o condomínio reúne lazer completo e um terraço com piscina de frente para o mar.</p>
+        <p class="lead" style="margin-top:14px">Piscina com borda de vidro, espaço gourmet com churrasqueira, fire place e salão de festas: o que você precisa para receber bem e aproveitar a vida à beira-mar.</p>
+      </div>
+    </div>
+
+    <div class="amen reveal" style="margin-top:56px">
+      <div>Piscina<span>com vista para o mar</span></div>
+      <div>Espaço gourmet<span>com churrasqueira</span></div>
+      <div>Salão de festas</div>
+      <div>Fire place</div>
+      <div>Playground</div>
+      <div>Jardim</div>
+      <div>Lavanderia</div>
+      <div>Depósito / hobby box</div>
+      <div>Elevador</div>
+      <div>Guarita e interfone</div>
+      <div>Aquecimento central</div>
+      <div>Pet place</div>
+    </div>
+
+    <div class="grid" style="margin-top:56px">
+      <figure class="g6 h-wide"><img src="img/predio-piscina.jpg" alt="Espreguiçadeiras junto à piscina com o mar ao fundo" loading="lazy"><figcaption>Terraço da piscina</figcaption></figure>
+      <figure class="g6 h-wide"><img src="img/predio-borda.jpg" alt="Borda de vidro da piscina refletindo o céu" loading="lazy"><figcaption>Piscina com borda de vidro</figcaption></figure>
+      <figure class="g4 h-tall"><img src="img/predio-piscina-2.jpg" alt="Piscina com escada de inox e vista do mar" loading="lazy"><figcaption>Piscina</figcaption></figure>
+      <figure class="g4 h-tall"><img src="img/predio-terraco.jpg" alt="Mesa de jantar no terraço coberto, com vista para o mar" loading="lazy"><figcaption>Terraço coberto</figcaption></figure>
+      <figure class="g4 h-tall"><img src="img/predio-piscina-3.jpg" alt="Piscina azul com vista panorâmica para a baía" loading="lazy"><figcaption>Vista da piscina</figcaption></figure>
+      <figure class="g12" style="aspect-ratio:21/9"><img src="img/predio-gourmet.jpg" alt="Espaço gourmet com bancada, banquetas e churrasqueira" loading="lazy"><figcaption>Espaço gourmet</figcaption></figure>
+    </div>
+    <p class="note">Fotos das áreas comuns do condomínio e das vistas do entorno. A vista a partir da unidade pode variar conforme o ponto de observação.</p>
+  </div>
+</section>
+
+<section class="loc" id="localizacao">
+  <img class="bg" src="img/vista-baia.jpg" alt="" loading="lazy">
+  <div class="wrap">
+    <p class="eyebrow" style="color:var(--sun-2)">Localização</p>
+    <h2 style="max-width:16ch">Canajurê, de frente para a Ilha do Francês.</h2>
+    <p class="lead" style="margin-top:22px">Na região de Jurerê, a poucos minutos de Jurerê Internacional, com o acesso à praia de Canajurê logo ao lado do edifício. Mar calmo, pôr do sol de cinema e a vida de praia de Florianópolis na sua porta.</p>
+    <div class="pills"><span>Rod. Tertuliano Brito Xavier</span><span>Jurerê · Florianópolis/SC</span><span>Praia de Canajurê</span><span>Minutos de Jurerê Internacional</span></div>
+    <p class="mapbtn"><a class="btn ghost" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Residencial+Timanfaya+Rodovia+Tertuliano+Brito+Xavier+Jurer%C3%AA+Florian%C3%B3polis">Ver no mapa</a></p>
+    <div class="grid" style="margin-top:56px">
+      <figure class="g4 h-sq"><img src="img/vista-enseada.jpg" alt="Enseada com veleiros e a orla ao fundo" loading="lazy"><figcaption>A enseada de Canajurê</figcaption></figure>
+      <figure class="g4 h-sq"><img src="img/trapiche.jpg" alt="Trapiche de madeira avançando sobre o mar de águas claras" loading="lazy"><figcaption>Trapiche da praia</figcaption></figure>
+      <figure class="g4 h-sq"><img src="img/praia.jpg" alt="Faixa de areia e mar tranquilo da praia de Canajurê" loading="lazy"><figcaption>Praia de Canajurê</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contato">
+  <div class="wrap">
+    <p class="eyebrow">Contato</p>
+    <h2>Vamos conversar?</h2>
+    <p class="lead">Venda direta com o proprietário. Chame no WhatsApp para tirar dúvidas, receber mais informações e combinar uma visita.</p>
+    <a class="btn" id="wa" target="_blank" rel="noopener" href="https://wa.me/19293898161?text=Ol%C3%A1!%20Tenho%20interesse%20no%20est%C3%BAdio%20do%20Timanfaya%20(Jurer%C3%AA)%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es.">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2a9.9 9.9 0 0 0-8.5 14.9L2 22l5.2-1.5A9.9 9.9 0 1 0 12.04 2Zm5.8 14.1c-.25.7-1.45 1.35-2 1.4-.5.05-1.15.07-1.85-.12-.43-.13-.98-.32-1.68-.62-2.96-1.28-4.9-4.25-5.05-4.45-.15-.2-1.2-1.6-1.2-3.05 0-1.45.76-2.16 1.03-2.46.27-.3.6-.37.8-.37h.57c.18 0 .43-.07.67.52.25.6.85 2.07.92 2.22.08.15.13.32.03.52-.1.2-.15.32-.3.5-.15.17-.32.38-.45.51-.15.15-.3.31-.13.6.17.3.77 1.27 1.65 2.05 1.13 1 2.08 1.31 2.38 1.46.3.15.47.12.65-.07.17-.2.75-.87.95-1.17.2-.3.4-.25.67-.15.27.1 1.72.82 2.02.97.3.15.5.22.57.35.07.12.07.72-.18 1.42Z"/></svg>
+      Chamar o proprietário no WhatsApp</a>
+    <p class="num">Proprietário · <a href="https://wa.me/19293898161">+1 (929) 389-8161</a></p>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p><strong>Timanfaya · Estúdio à venda em Jurerê, Florianópolis/SC.</strong> Valor: R$ 750.000, sujeito a confirmação. Metragem: 32,10&nbsp;m² de área privativa. Condomínio, IPTU e demais custos sob consulta.</p>
+    <p>As imagens da aba “Decorado” são ilustrações geradas digitalmente (virtual staging) e não representam o estado atual do imóvel. Fotos de vistas e áreas comuns são ilustrativas do edifício e do entorno.</p>
+  </div>
+</footer>
+
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Visualizador de imagens">
+  <button class="x" aria-label="Fechar">×</button>
+  <button class="p" aria-label="Anterior">‹</button>
+  <img alt="">
+  <p></p>
+  <button class="n" aria-label="Próxima">›</button>
+</div>
+
+<script>
+(function(){
+  // topbar background after hero
+  var top=document.getElementById('top');
+  function onScroll(){top.classList.toggle('solid',window.scrollY>60)}
+  addEventListener('scroll',onScroll,{passive:true});onScroll();
+
+  // gallery tabs
+  var tabs=document.querySelectorAll('.tabs button');
+  tabs.forEach(function(b){b.addEventListener('click',function(){
+    tabs.forEach(function(x){x.setAttribute('aria-selected',x===b)});
+    var deco=b.id==='t-deco';
+    document.getElementById('p-hoje').hidden=deco;
+    document.getElementById('n-hoje').hidden=deco;
+    document.getElementById('p-deco').hidden=!deco;
+    document.getElementById('n-deco').hidden=!deco;
+  })});
+
+  // lightbox over every gallery figure
+  var lb=document.getElementById('lb'),im=lb.querySelector('img'),cap=lb.querySelector('p'),list=[],cur=0;
+  function show(i){cur=(i+list.length)%list.length;var f=list[cur];im.src=f.querySelector('img').src;im.alt=f.querySelector('img').alt;
+    var b=f.querySelector('.badge');cap.textContent=(b&&!b.classList.contains('real')?'Ilustração · ':'')+(f.querySelector('figcaption')||{}).textContent}
+  function open(f){list=[].filter.call(document.querySelectorAll('.grid figure'),function(x){return x.offsetParent!==null});show(list.indexOf(f));lb.classList.add('open')}
+  document.querySelectorAll('.grid figure').forEach(function(f){f.addEventListener('click',function(){open(f)})});
+  lb.querySelector('.x').onclick=function(){lb.classList.remove('open')};
+  lb.querySelector('.p').onclick=function(){show(cur-1)};
+  lb.querySelector('.n').onclick=function(){show(cur+1)};
+  lb.addEventListener('click',function(e){if(e.target===lb)lb.classList.remove('open')});
+  addEventListener('keydown',function(e){if(!lb.classList.contains('open'))return;
+    if(e.key==='Escape')lb.classList.remove('open');if(e.key==='ArrowLeft')show(cur-1);if(e.key==='ArrowRight')show(cur+1)});
+
+  // reveal on scroll
+  var io='IntersectionObserver' in window?new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12}):null;
+  document.querySelectorAll('.reveal').forEach(function(el){io?io.observe(el):el.classList.add('in')});
+})();
+</script>
+</body>
+</html>
