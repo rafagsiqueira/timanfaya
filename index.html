@@ -116,6 +116,9 @@ h2{font-size:clamp(34px,5vw,56px);letter-spacing:-.01em}
 .pills{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
 .pills span{border:1px solid rgba(255,255,255,.4);border-radius:999px;padding:8px 16px;font-size:14px;background:rgba(10,25,29,.35)}
 .mapbtn{margin-top:28px}
+.stairs{margin-top:56px;background:rgba(10,25,29,.78);backdrop-filter:blur(6px);border-radius:24px;padding:clamp(16px,3vw,32px)}
+.stairs h3{font-size:clamp(28px,3.6vw,44px)}
+.stairs img{aspect-ratio:1/1;box-shadow:0 30px 60px -30px rgba(0,0,0,.6)}
 
 /* contact */
 .contact{background:var(--ink);color:#f3ebdf;text-align:center}
@@ -160,7 +163,7 @@ footer p{max-width:90ch;margin:0 0 10px}
   <div class="wrap">
     <p class="eyebrow" style="color:var(--sun-2)">Canajurê · Jurerê · Florianópolis</p>
     <h1>Seu refúgio com <em>vista para o mar</em></h1>
-    <p class="sub">Estúdio de 32,10&nbsp;m² no Residencial Timanfaya, com posição solar privilegiada, vaga de garagem e lazer completo — a poucos passos da praia.</p>
+    <p class="sub">Estúdio de 32,10&nbsp;m² no Residencial Timanfaya, com posição solar privilegiada, vaga de garagem, lazer completo e escadaria privativa até a praia.</p>
     <div class="actions">
       <a class="btn" href="#contato">Agendar visita</a>
       <a class="btn ghost" href="#apartamento">Conhecer o apartamento</a>
@@ -190,6 +193,7 @@ footer p{max-width:90ch;margin:0 0 10px}
         <li>Área privativa de 32,10&nbsp;m², com 1 banheiro, no 3º andar</li>
         <li>Janela ampla voltada para o mar e para o pôr do sol</li>
         <li>Vaga de garagem e hobby box</li>
+        <li>Escadaria privativa do condomínio com acesso direto à praia</li>
         <li>Condomínio com piscina, espaço gourmet e salão de festas</li>
       </ul>
       <p style="margin-top:32px"><a class="btn" href="#contato">Quero visitar</a></p>
@@ -249,6 +253,7 @@ footer p{max-width:90ch;margin:0 0 10px}
     </div>
 
     <div class="amen reveal" style="margin-top:56px">
+      <div>Acesso privativo à praia<span>escadaria exclusiva dos moradores</span></div>
       <div>Piscina<span>com vista para o mar</span></div>
       <div>Espaço gourmet<span>com churrasqueira</span></div>
       <div>Salão de festas</div>
@@ -280,9 +285,17 @@ footer p{max-width:90ch;margin:0 0 10px}
   <div class="wrap">
     <p class="eyebrow" style="color:var(--sun-2)">Localização</p>
     <h2 style="max-width:16ch">Canajurê, de frente para a Ilha do Francês.</h2>
-    <p class="lead" style="margin-top:22px">Na região de Jurerê, a poucos minutos de Jurerê Internacional, com o acesso à praia de Canajurê logo ao lado do edifício. Mar calmo, pôr do sol de cinema e a vida de praia de Florianópolis na sua porta.</p>
-    <div class="pills"><span>Rod. Tertuliano Brito Xavier</span><span>Jurerê · Florianópolis/SC</span><span>Praia de Canajurê</span><span>Minutos de Jurerê Internacional</span></div>
+    <p class="lead" style="margin-top:22px">Na região de Jurerê, a poucos minutos de Jurerê Internacional, de frente para a praia de Canajurê. Mar calmo, pôr do sol de cinema e a vida de praia de Florianópolis na sua porta.</p>
+    <div class="pills"><span>Acesso privativo à praia</span><span>Rod. Tertuliano Brito Xavier</span><span>Jurerê · Florianópolis/SC</span><span>Praia de Canajurê</span><span>Minutos de Jurerê Internacional</span></div>
     <p class="mapbtn"><a class="btn ghost" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Residencial+Timanfaya+Rodovia+Tertuliano+Brito+Xavier+Jurer%C3%AA+Florian%C3%B3polis">Ver no mapa</a></p>
+    <div class="split stairs reveal">
+      <img src="img/escadaria.jpg" alt="Escadaria privativa do condomínio descendo entre os prédios, com corrimãos, luminárias e o mar ao fundo" loading="lazy">
+      <div>
+        <p class="eyebrow" style="color:var(--sun-2)">Acesso exclusivo</p>
+        <h3>Do prédio direto para a praia, pela escadaria privativa.</h3>
+        <p class="lead" style="margin-top:18px">O condomínio tem uma escadaria própria, só para moradores, que desce até a praia de Canajurê: iluminada, com corrimãos e com o mar à sua frente a cada degrau.</p>
+      </div>
+    </div>
     <div class="grid" style="margin-top:56px">
       <figure class="g4 h-sq"><img src="img/vista-enseada.jpg" alt="Enseada com veleiros e a orla ao fundo" loading="lazy"><figcaption>A enseada de Canajurê</figcaption></figure>
       <figure class="g4 h-sq"><img src="img/trapiche.jpg" alt="Trapiche de madeira avançando sobre o mar de águas claras" loading="lazy"><figcaption>Trapiche da praia</figcaption></figure>
