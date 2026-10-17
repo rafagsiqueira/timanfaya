@@ -1,5 +1,4 @@
 export const OBJECTIVES = {
-  whatsapp: "Conversas no WhatsApp",
   traffic: "Visitas ao site",
   awareness: "Alcance / divulgação",
 } as const;

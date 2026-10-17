@@ -90,7 +90,7 @@ export async function createCampaign(
   const parsed = z.object({
     name: z.string().trim().min(1, "Informe o nome"),
     channel: z.enum(["instagram", "google"]),
-    objective: z.enum(["whatsapp", "traffic", "awareness"]),
+    objective: z.enum(["traffic", "awareness"]),
     dailyBudget: money,
     startsOn: isoDate,
     endsOn: isoDate,

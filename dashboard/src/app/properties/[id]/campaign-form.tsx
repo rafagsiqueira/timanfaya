@@ -25,7 +25,7 @@ export function CampaignForm({ budgetId, propertyId, defaultLink, startsOn, ends
           </select>
         </label>
         <label>Objetivo
-          <select name="objective" defaultValue="whatsapp">
+          <select name="objective" defaultValue="traffic">
             {Object.entries(OBJECTIVES).map(([k, v]) => <option key={k} value={k}>{v}</option>)}
           </select>
         </label>

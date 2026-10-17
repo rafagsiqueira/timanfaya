@@ -58,7 +58,7 @@ export const campaigns = pgTable(
     status: campaignStatusEnum("status").notNull().default("active"),
     externalId: text("external_id"), // id in Meta/Google Ads, for future API sync
     // Campaign plan (what will be published to the ad platform)
-    objective: text("objective").notNull().default("whatsapp"), // whatsapp | traffic | awareness
+    objective: text("objective").notNull().default("traffic"), // traffic | awareness
     dailyBudgetCents: integer("daily_budget_cents"),
     startsOn: date("starts_on", { mode: "string" }),
     endsOn: date("ends_on", { mode: "string" }),

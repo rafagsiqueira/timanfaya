@@ -15,6 +15,13 @@
       "when": 1792196433044,
       "tag": "0001_same_sabretooth",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1792275127458,
+      "tag": "0002_shallow_ultimatum",
+      "breakpoints": true
     }
   ]
 }
