@@ -1,10 +1,11 @@
 "use server";
-import { and, eq, sql } from "drizzle-orm";
+import { and, eq, ne, sql } from "drizzle-orm";
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 import { z } from "zod";
 import { db, schema } from "@/db";
-import { parseBRL, splitTwoWays } from "@/lib/money";
+import { checkChannelBudget, plannedCents } from "@/lib/campaign";
+import { formatBRL, parseBRL, splitTwoWays } from "@/lib/money";
 
 const { properties, budgets, budgetAllocations, campaigns, spendEntries } = schema;
 
@@ -81,14 +82,56 @@ export async function deleteBudget(budgetId: number, propertyId: number) {
   revalidatePath(`/properties/${propertyId}`);
 }
 
-export async function createCampaign(budgetId: number, propertyId: number, formData: FormData) {
-  const d = z.object({
-    name: z.string().trim().min(1),
+export type CampaignFormState = { error?: string; ok?: boolean };
+
+export async function createCampaign(
+  budgetId: number, propertyId: number, _prev: CampaignFormState, formData: FormData,
+): Promise<CampaignFormState> {
+  const parsed = z.object({
+    name: z.string().trim().min(1, "Informe o nome"),
     channel: z.enum(["instagram", "google"]),
-    externalId: z.string().trim().optional(),
-  }).parse(Object.fromEntries(formData));
-  await db.insert(campaigns).values({ budgetId, name: d.name, channel: d.channel, externalId: d.externalId || null });
+    objective: z.enum(["whatsapp", "traffic", "awareness"]),
+    dailyBudget: money,
+    startsOn: isoDate,
+    endsOn: isoDate,
+    locations: z.string().trim().min(1, "Informe a localização"),
+    ageMin: z.coerce.number().int().min(18).max(65),
+    ageMax: z.coerce.number().int().min(18).max(65),
+    audience: z.string().trim().optional(),
+    headline: z.string().trim().min(1, "Informe o título").max(40, "Título: máx. 40 caracteres"),
+    bodyText: z.string().trim().min(1, "Informe o texto").max(125, "Texto: máx. 125 caracteres"),
+    linkUrl: z.string().trim().url("Link inválido"),
+    creativeUrl: z.string().trim().url("Link da imagem inválido").optional().or(z.literal("")),
+  }).safeParse(Object.fromEntries(formData));
+  if (!parsed.success) return { error: parsed.error.issues[0].message };
+  const d = parsed.data;
+  if (d.ageMin > d.ageMax) return { error: "Idade mínima maior que a máxima" };
+  if (d.endsOn < d.startsOn) return { error: "A data final é anterior à inicial" };
+
+  const [budget] = await db.select().from(budgets).where(eq(budgets.id, budgetId));
+  if (!budget || budget.propertyId !== propertyId) return { error: "Orçamento não encontrado" };
+  if (d.startsOn < budget.startsOn || (budget.endsOn && d.endsOn > budget.endsOn))
+    return { error: "As datas da campanha precisam caber no período do orçamento" };
+
+  // Budget guard: this channel's committed spend (other live/draft campaigns) + this plan must fit its allocation.
+  const [alloc] = await db.select().from(budgetAllocations)
+    .where(and(eq(budgetAllocations.budgetId, budgetId), eq(budgetAllocations.channel, d.channel)));
+  const others = await db.select().from(campaigns)
+    .where(and(eq(campaigns.budgetId, budgetId), eq(campaigns.channel, d.channel), ne(campaigns.status, "ended")));
+  const committed = others.reduce((a, c) => a + plannedCents(c), 0);
+  const planned = plannedCents({ dailyBudgetCents: d.dailyBudget, startsOn: d.startsOn, endsOn: d.endsOn });
+  const guard = checkChannelBudget(alloc?.amountCents ?? 0, committed, planned);
+  if (!guard.ok)
+    return { error: `Passa do orçamento do ${d.channel === "instagram" ? "Instagram" : "Google"}: esta campanha prevê ${formatBRL(planned)}, mas restam ${formatBRL(Math.max(0, guard.remaining))}.` };
+
+  await db.insert(campaigns).values({
+    budgetId, name: d.name, channel: d.channel, objective: d.objective, status: "draft",
+    dailyBudgetCents: d.dailyBudget, startsOn: d.startsOn, endsOn: d.endsOn,
+    locations: d.locations, ageMin: d.ageMin, ageMax: d.ageMax, audience: d.audience || null,
+    headline: d.headline, bodyText: d.bodyText, linkUrl: d.linkUrl, creativeUrl: d.creativeUrl || null,
+  });
   revalidatePath(`/properties/${propertyId}`);
+  return { ok: true };
 }
 
 export async function setCampaignStatus(campaignId: number, propertyId: number, formData: FormData) {

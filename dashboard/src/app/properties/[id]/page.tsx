@@ -8,6 +8,8 @@ import {
   addSpend, createBudget, createCampaign, deleteBudget, deleteSpend, setCampaignStatus, updateBudget,
 } from "../../actions";
 import { SplitFields } from "./split-fields";
+import { CampaignForm } from "./campaign-form";
+import { plannedCents } from "@/lib/campaign";
 
 export const dynamic = "force-dynamic";
 const { properties, budgets, campaigns, spendEntries } = schema;
@@ -94,7 +96,7 @@ export default async function PropertyPage({ params }: { params: Promise<{ id: s
             <div className="card scroll">
               {bCamps.length === 0 ? <p className="sub" style={{ margin: 0 }}>Nenhuma campanha ainda.</p> : (
                 <table>
-                  <thead><tr><th>Campanha</th><th>Canal</th><th>Status</th><th className="n">Gasto</th></tr></thead>
+                  <thead><tr><th>Campanha</th><th>Canal</th><th>Status</th><th className="n">Previsto</th><th className="n">Gasto</th></tr></thead>
                   <tbody>{bCamps.map((c) => (
                     <tr key={c.id}>
                       <td>{c.name}</td>
@@ -106,6 +108,7 @@ export default async function PropertyPage({ params }: { params: Promise<{ id: s
                           </select> <button className="btn ghost sm">OK</button>
                         </form>
                       </td>
+                      <td className="n">{c.dailyBudgetCents ? formatBRL(plannedCents(c)) : "—"}</td>
                       <td className="n">{formatBRL(bSpend.filter((s) => s.campaignId === c.id).reduce((a, s) => a + s.amountCents, 0))}</td>
                     </tr>
                   ))}</tbody>
@@ -113,12 +116,7 @@ export default async function PropertyPage({ params }: { params: Promise<{ id: s
               )}
               <details>
                 <summary>Nova campanha</summary>
-                <form action={createCampaign.bind(null, b.id, id)} className="row" style={{ marginTop: 12 }}>
-                  <label>Nome<input name="name" required placeholder="Stories · vista para o mar" /></label>
-                  <label>Canal<select name="channel"><option value="instagram">Instagram</option><option value="google">Google</option></select></label>
-                  <label>ID na plataforma (opcional)<input name="externalId" /></label>
-                  <button className="btn sm">Criar</button>
-                </form>
+                <CampaignForm budgetId={b.id} propertyId={id} defaultLink={property.siteUrl ?? ""} startsOn={b.startsOn > today() ? b.startsOn : today()} endsOn={b.endsOn ?? ""} />
               </details>
             </div>
 

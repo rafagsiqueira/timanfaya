@@ -57,6 +57,20 @@ export const campaigns = pgTable(
     name: text("name").notNull(),
     status: campaignStatusEnum("status").notNull().default("active"),
     externalId: text("external_id"), // id in Meta/Google Ads, for future API sync
+    // Campaign plan (what will be published to the ad platform)
+    objective: text("objective").notNull().default("whatsapp"), // whatsapp | traffic | awareness
+    dailyBudgetCents: integer("daily_budget_cents"),
+    startsOn: date("starts_on", { mode: "string" }),
+    endsOn: date("ends_on", { mode: "string" }),
+    locations: text("locations"), // comma-separated, e.g. "Brasil"
+    ageMin: integer("age_min"),
+    ageMax: integer("age_max"),
+    audience: text("audience"), // interests (Instagram) or keywords (Google), comma-separated
+    headline: text("headline"),
+    bodyText: text("body_text"),
+    linkUrl: text("link_url"),
+    creativeUrl: text("creative_url"),
+    lastError: text("last_error"),
     createdAt: timestamp("created_at", { withTimezone: true }).notNull().defaultNow(),
   },
   (t) => [index("campaigns_budget_idx").on(t.budgetId)],

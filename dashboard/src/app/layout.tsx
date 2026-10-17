@@ -8,7 +8,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="pt-BR">
       <body>
-        <header className="top"><div className="wrap"><Link href="/">Marketing · Imóveis</Link></div></header>
+        <header className="top"><div className="wrap"><Link href="/">Marketing · Imóveis</Link><Link href="/connections">Conexões</Link></div></header>
         {children}
       </body>
     </html>
