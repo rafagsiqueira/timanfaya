@@ -18,7 +18,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
 :root{
-  --sand:#f7f1e8; --sand-2:#efe5d6; --ink:#10292f; --ink-2:#3b5359;
+  --night:#10292f;--sand:#f7f1e8; --sand-2:#efe5d6; --ink:#10292f; --ink-2:#3b5359;
   --sea:#2c7b83; --sun:#d98a2f; --sun-2:#f0b45e; --line:rgba(16,41,47,.14);
   --serif:"Cormorant Garamond",Georgia,serif; --sans:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;
 }
@@ -68,7 +68,7 @@ h2{font-size:clamp(34px,5vw,56px);letter-spacing:-.01em}
 @media(max-width:720px){.price-tag{margin:18px 0 0;text-align:left;width:100%}}
 
 /* facts */
-.facts{padding:0;margin-top:-1px;background:var(--ink);color:#f3ebdf}
+.facts{padding:0;margin-top:-1px;background:var(--night);color:#f3ebdf}
 .facts .wrap{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:0}
 .fact{padding:28px 18px;border-left:1px solid rgba(255,255,255,.12)}
 .fact:first-child{border-left:0}
@@ -121,12 +121,15 @@ h2{font-size:clamp(34px,5vw,56px);letter-spacing:-.01em}
 .stairs img{aspect-ratio:1/1;box-shadow:0 30px 60px -30px rgba(0,0,0,.6)}
 
 /* contact */
-.contact{background:var(--ink);color:#f3ebdf;text-align:center}
+.contact{background:var(--night);color:#f3ebdf;text-align:center}
 .contact h2{color:#fff}
-.contact .lead{margin:18px auto 34px;color:#c9d4d3}
+.contact .lead{margin:18px auto 34px;color:#e4ebea}
 .contact .btn{font-size:18px;padding:18px 34px}
-.contact .num{margin-top:18px;font-size:15px;opacity:.8}
-footer{padding:36px 0;font-size:13px;color:var(--ink-2)}
+.contact .num{margin-top:18px;font-size:16px;color:#e4ebea}
+.contact .num a{color:#fff;font-weight:600}
+footer{padding:36px 0;font-size:14px;color:var(--ink);opacity:1}
+footer p{color:var(--ink-2)}
+footer strong{color:var(--ink)}
 footer p{max-width:90ch;margin:0 0 10px}
 
 /* lightbox */
