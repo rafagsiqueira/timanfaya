@@ -9,6 +9,22 @@
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
   gtag('config', 'AW-18517806077');
+
+  function gtag_report_conversion(url) {
+    var called = false;
+    var callback = function () {
+      if (!called && typeof(url) != 'undefined') {
+        called = true;
+        window.location = url;
+      }
+    };
+    gtag('event', 'conversion', {
+        'send_to': 'AW-18517806077/4uHkCJGoqbIdEP2X_f1E',
+        'event_callback': callback
+    });
+    setTimeout(callback, 500);
+    return false;
+  }
 </script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Estúdio à venda no Timanfaya · Jurerê, Florianópolis</title>
@@ -320,10 +336,10 @@ footer p{max-width:90ch;margin:0 0 10px}
     <p class="eyebrow">Contato</p>
     <h2>Vamos conversar?</h2>
     <p class="lead">Venda direta com o proprietário. Chame no WhatsApp para tirar dúvidas, receber mais informações e combinar uma visita.</p>
-    <a class="btn" id="wa" target="_blank" rel="noopener" href="https://wa.me/5548998310339?text=Ol%C3%A1!%20Tenho%20interesse%20no%20est%C3%BAdio%20do%20Timanfaya%20(Jurer%C3%AA)%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es." onclick="gtag('event', 'conversion', {'send_to': 'AW-18517806077/AtRMCIzawa8dEP2X_f1E'});">
+    <a class="btn" id="wa" href="https://wa.me/5548998310339?text=Ol%C3%A1!%20Tenho%20interesse%20no%20est%C3%BAdio%20do%20Timanfaya%20(Jurer%C3%AA)%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es." onclick="return gtag_report_conversion(this.href);">
       <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2a9.9 9.9 0 0 0-8.5 14.9L2 22l5.2-1.5A9.9 9.9 0 1 0 12.04 2Zm5.8 14.1c-.25.7-1.45 1.35-2 1.4-.5.05-1.15.07-1.85-.12-.43-.13-.98-.32-1.68-.62-2.96-1.28-4.9-4.25-5.05-4.45-.15-.2-1.2-1.6-1.2-3.05 0-1.45.76-2.16 1.03-2.46.27-.3.6-.37.8-.37h.57c.18 0 .43-.07.67.52.25.6.85 2.07.92 2.22.08.15.13.32.03.52-.1.2-.15.32-.3.5-.15.17-.32.38-.45.51-.15.15-.3.31-.13.6.17.3.77 1.27 1.65 2.05 1.13 1 2.08 1.31 2.38 1.46.3.15.47.12.65-.07.17-.2.75-.87.95-1.17.2-.3.4-.25.67-.15.27.1 1.72.82 2.02.97.3.15.5.22.57.35.07.12.07.72-.18 1.42Z"/></svg>
       Chamar o proprietário no WhatsApp</a>
-    <p class="num">Proprietário · <a href="https://wa.me/5548998310339">+55 48 99831-0339</a></p>
+    <p class="num">Proprietário · <a href="https://wa.me/5548998310339" onclick="return gtag_report_conversion(this.href);">+55 48 99831-0339</a></p>
   </div>
 </section>
 </main>
